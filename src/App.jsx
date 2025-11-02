@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import WhatsAppButton from './components/WhatsAppButton'
+import Chatbot from './components/Chatbot'
 import FixedLogoBackground from './components/FixedLogoBackground'
 import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
@@ -40,7 +40,7 @@ function App() {
                   <Home />
                 </motion.main>
                 <Footer />
-                <WhatsAppButton />
+                <Chatbot />
               </>
             } />
             <Route path="/about" element={
@@ -50,7 +50,7 @@ function App() {
                   <About />
                 </motion.main>
                 <Footer />
-                <WhatsAppButton />
+                <Chatbot />
               </>
             } />
             <Route path="/our-services" element={
@@ -60,7 +60,7 @@ function App() {
                   <OurServices />
                 </motion.main>
                 <Footer />
-                <WhatsAppButton />
+                <Chatbot />
               </>
             } />
             <Route path="/our-experts" element={
@@ -70,7 +70,7 @@ function App() {
                   <OurExperts />
                 </motion.main>
                 <Footer />
-                <WhatsAppButton />
+                <Chatbot />
               </>
             } />
             <Route path="/appointment" element={
@@ -80,7 +80,7 @@ function App() {
                   <Appointment />
                 </motion.main>
                 <Footer />
-                <WhatsAppButton />
+                <Chatbot />
               </>
             } />
             <Route path="/faqs" element={
@@ -90,7 +90,7 @@ function App() {
                   <FAQs />
                 </motion.main>
                 <Footer />
-                <WhatsAppButton />
+                <Chatbot />
               </>
             } />
             <Route path="/blog" element={
@@ -100,7 +100,7 @@ function App() {
                   <Blog />
                 </motion.main>
                 <Footer />
-                <WhatsAppButton />
+                <Chatbot />
               </>
             } />
             <Route path="/contact" element={
@@ -110,7 +110,7 @@ function App() {
                   <Contact />
                 </motion.main>
                 <Footer />
-                <WhatsAppButton />
+                <Chatbot />
               </>
             } />
             
@@ -122,7 +122,7 @@ function App() {
                   <ServiceDetail />
                 </motion.main>
                 <Footer />
-                <WhatsAppButton />
+                <Chatbot />
               </>
             } />
 
@@ -134,7 +134,7 @@ function App() {
                   <DoctorProfile />
                 </motion.main>
                 <Footer />
-                <WhatsAppButton />
+                <Chatbot />
               </>
             } />
 
@@ -146,7 +146,7 @@ function App() {
                   <PrivacyPolicy />
                 </motion.main>
                 <Footer />
-                <WhatsAppButton />
+                <Chatbot />
               </>
             } />
 
@@ -158,7 +158,7 @@ function App() {
                   <TermsOfService />
                 </motion.main>
                 <Footer />
-                <WhatsAppButton />
+                <Chatbot />
               </>
             } />
 
@@ -170,7 +170,7 @@ function App() {
                   <Sitemap />
                 </motion.main>
                 <Footer />
-                <WhatsAppButton />
+                <Chatbot />
               </>
             } />
 
