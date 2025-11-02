@@ -47,9 +47,9 @@ const Chatbot = () => {
   }, [messages])
 
   const mainMenuOptions = [
-    { id: 'services', label: '📋 Our Services', icon: Heart, color: 'bg-blue-500' },
-    { id: 'doctors', label: '👨‍⚕️ Our Experts', icon: Users, color: 'bg-green-500' },
-    { id: 'appointment', label: '📅 Book Appointment', icon: Calendar, color: 'bg-purple-500' },
+    { id: 'services', label: '📋 Our Services', icon: Heart, color: 'bg-primary-500' },
+    { id: 'doctors', label: '👨‍⚕️ Our Experts', icon: Users, color: 'bg-primary-600' },
+    { id: 'appointment', label: '📅 Book Appointment', icon: Calendar, color: 'bg-primary-700' },
     { id: 'contact', label: '📞 Contact Information', icon: Phone, color: 'bg-red-500' },
     { id: 'location', label: '📍 Location & Directions', icon: MapPin, color: 'bg-orange-500' },
     { id: 'hours', label: '🕐 Operating Hours', icon: Clock, color: 'bg-indigo-500' }
@@ -86,14 +86,16 @@ const Chatbot = () => {
     setChatHistory(prev => [...prev, newMessage])
   }
 
-  const handleMenuSelection = (menuId) => {
+  const handleMenuSelection = (menuId, skipUserMessage = false) => {
     const selectedOption = mainMenuOptions.find(opt => opt.id === menuId)
     
-    // Add user selection message
-    addMessage({
-      type: 'user',
-      text: selectedOption.label
-    })
+    // Add user selection message unless skipped
+    if (!skipUserMessage) {
+      addMessage({
+        type: 'user',
+        text: selectedOption.label
+      })
+    }
 
     // Handle different menu options
     switch (menuId) {
@@ -203,23 +205,47 @@ const Chatbot = () => {
   }
 
   const handleOptionClick = (option) => {
-    // Add user selection message
-    addMessage({
-      type: 'user',
-      text: option.label
-    })
-
     // If it's a back button, reset to main menu
     if (option.id === 'back-main') {
+      // Add user selection message
+      addMessage({
+        type: 'user',
+        text: option.label
+      })
       setCurrentMenu('main')
       setTimeout(() => {
+        const mainMenuOptionsList = mainMenuOptions.map(opt => ({
+          id: opt.id,
+          label: opt.label,
+          action: null // Will be handled by checking if it's a main menu option
+        }))
         addMessage({
           type: 'bot',
           text: "How can I help you today?",
+          options: mainMenuOptionsList
         })
       }, 300)
       return
     }
+
+    // Check if this is a main menu option (has id that matches mainMenuOptions)
+    const isMainMenuOption = mainMenuOptions.some(opt => opt.id === option.id)
+    if (isMainMenuOption && !option.action) {
+      // Add user selection message first
+      addMessage({
+        type: 'user',
+        text: option.label
+      })
+      // Call the menu selection logic, skipping user message since we already added it
+      handleMenuSelection(option.id, true)
+      return
+    }
+
+    // For other options, add user message and execute action
+    addMessage({
+      type: 'user',
+      text: option.label
+    })
 
     // Execute the action
     if (option.action) {
@@ -268,10 +294,10 @@ Thank you!`
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             onClick={handleCall}
-            className="bg-primary-600 hover:bg-primary-700 text-white rounded-full p-3 sm:p-4 shadow-2xl flex items-center justify-center transition-colors duration-200 group relative"
+            className="bg-primary-600 hover:bg-primary-700 text-white rounded-full p-3 sm:p-4 shadow-2xl flex items-center justify-center transition-colors duration-200 group relative ring-2 ring-white ring-opacity-50 backdrop-blur-sm"
             aria-label="Call us"
           >
-            <Phone className="w-5 h-5 sm:w-7 sm:h-7" />
+            <Phone className="w-5 h-5 sm:w-7 sm:h-7 drop-shadow-lg" />
             
             {/* Tooltip */}
             <div className="absolute right-full mr-3 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
@@ -281,7 +307,7 @@ Thank you!`
 
           {/* Pulse Animation */}
           <motion.div
-            className="absolute inset-0 bg-primary-400 rounded-full -z-10"
+            className="absolute inset-0 bg-white bg-opacity-40 rounded-full -z-10"
             animate={{
               scale: [1, 1.3, 1],
               opacity: [0.5, 0, 0.5],
@@ -309,10 +335,10 @@ Thank you!`
                 resetChat()
               }
             }}
-            className={`${isOpen ? 'bg-red-500 hover:bg-red-600' : 'bg-green-500 hover:bg-green-600'} text-white rounded-full p-3 sm:p-4 shadow-2xl flex items-center justify-center transition-colors duration-200 group relative`}
+            className={`${isOpen ? 'bg-red-500 hover:bg-red-600' : 'bg-primary-600 hover:bg-primary-700'} text-white rounded-full p-3 sm:p-4 shadow-2xl flex items-center justify-center transition-colors duration-200 group relative ring-2 ring-white ring-opacity-50 backdrop-blur-sm`}
             aria-label="Chat with us"
           >
-            {isOpen ? <X className="w-5 h-5 sm:w-7 sm:h-7" /> : <Bot className="w-5 h-5 sm:w-7 sm:h-7" />}
+            {isOpen ? <X className="w-5 h-5 sm:w-7 sm:h-7 drop-shadow-lg" /> : <Bot className="w-5 h-5 sm:w-7 sm:h-7 drop-shadow-lg" />}
             
             {/* Tooltip */}
             <div className="absolute right-full mr-3 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
@@ -322,7 +348,7 @@ Thank you!`
 
           {/* Pulse Animation */}
           <motion.div
-            className="absolute inset-0 bg-green-400 rounded-full -z-10"
+            className="absolute inset-0 bg-white bg-opacity-40 rounded-full -z-10"
             animate={{
               scale: [1, 1.3, 1],
               opacity: [0.5, 0, 0.5],
@@ -398,8 +424,8 @@ Thank you!`
               ))}
               <div ref={messagesEndRef} />
 
-              {/* Main Menu Options - Show when no bot response with options exists */}
-              {messages.length <= 1 && currentMenu === 'main' && (
+              {/* Main Menu Options - Show when welcome message only or when explicitly showing main menu */}
+              {currentMenu === 'main' && messages.length === 1 && !messages[0].options && (
                 <div className="grid grid-cols-2 gap-1.5 sm:gap-2 mt-3 sm:mt-4">
                   {mainMenuOptions.map((option) => (
                     <button
