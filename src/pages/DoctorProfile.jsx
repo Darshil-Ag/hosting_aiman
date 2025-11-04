@@ -125,7 +125,7 @@ const DoctorProfile = () => {
       experience: '5+ years',
       qualifications: 'MBBS, MD (Psychiatry)',
       email: 'aditya.sharma@aimanhealth.com',
-      phone: '+91 98765 43212',
+      phone: '+91 96641 81620',
       availability: 'Mon-Fri 9AM-5PM, Sat 10AM-3PM',
       description: 'Dr Aditya is consultant psychiatrist with strong background in clinical psychiatry and mental health advocacy. After doing his MD from SMS medical college, Dr Aditya had experience of working in IHBAS, Delhi. With over 5 years of experiences he has worked with diverse patient population addressing range of psychiatric disorders. Dr Aditya is actively involved in medical education and academic research.',
       education: [
@@ -469,7 +469,7 @@ const DoctorProfile = () => {
             {/* Sidebar */}
             <div className="space-y-6">
               {/* Contact Info */}
-              {/* <motion.div
+              { <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
@@ -478,20 +478,12 @@ const DoctorProfile = () => {
               >
                 <h3 className="text-xl font-bold text-gray-800 mb-4">Contact Information</h3>
                 <div className="space-y-4">
-                  <div className="flex items-center">
-                    <Mail className="w-5 h-5 text-primary-600 mr-3" />
-                    <span className="text-gray-600">{doctor.email}</span>
-                  </div>
-                  <div className="flex items-center">
+                                    <div className="flex items-center">
                     <Phone className="w-5 h-5 text-primary-600 mr-3" />
                     <span className="text-gray-600">{doctor.phone}</span>
                   </div>
-                  <div className="flex items-center">
-                    <Clock className="w-5 h-5 text-primary-600 mr-3" />
-                    <span className="text-gray-600">{doctor.availability}</span>
-                  </div>
                 </div>
-              </motion.div> */}
+              </motion.div> }
 
               {/* Experience */}
               <motion.div
