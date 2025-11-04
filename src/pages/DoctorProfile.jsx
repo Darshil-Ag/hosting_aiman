@@ -37,7 +37,7 @@ const DoctorProfile = () => {
       experience: '11+ years',
       qualifications: 'MBBS, MD (Psychiatry), PGDMLE',
       email: 'piyush.verma@aimanhealth.com',
-      phone: '+91 98765 43210',
+      phone: '+91 88008 33411',
       availability: 'Mon-Fri 9AM-5PM, Sat 9AM-1PM',
       description: 'Dr Piyush believe that mental health is for all. As a psychiatrist of more than 11 years of clinical expertise, he has deep compassion to support individuals and their family through their mental health journey. With academic training and experience from PGIMER Rohtak dr Piyush integrate latest scientific findings into ever day psychiatry practice. He actively contribute to ongoing research and medical education. Dr Piyush is also passionate about raising awareness around mental health and reducing stigma.',
       education: [
@@ -81,7 +81,7 @@ const DoctorProfile = () => {
       experience: '8+ years',
       qualifications: 'MBBS, MD (Psychiatry)',
       email: 'sangeeta.hatila@aimanhealth.com',
-      phone: '+91 98765 43211',
+      phone: '+91 88008 33411',
       availability: 'Mon-Fri 10AM-6PM, Sun 10AM-2PM',
       description: 'Dr Sangeeta is dedicated and compassionate psychiatrist with 8 years of extensive experience in diagnosing and treating wide range of mental health conditions. After her MBBS, she did her MD psychiatry from SMS Medical college. She also served as assistant professor in SPMC, Bikaner which equipped her with comprehensive knowledge and skills to deliver high quality care. She has number of publications and academics paper throughout her career. Dr Sangeeta communicate fluently in English, Hindi allowing her to engage effectively with diverse patient population.',
       education: [
@@ -169,7 +169,7 @@ const DoctorProfile = () => {
       experience: '30+ years',
       qualifications: 'MBBS, MD (Medicine), DNB (Neurology)',
       email: 'kiran.bala@aimanhealth.com',
-      phone: '+91 98765 43213',
+      phone: '+91 88008 33411',
       availability: 'Mon-Fri 8AM-4PM, Sat 8AM-12PM',
       description: 'Dr. Kiran Bala is a highly respected neurologist with over 30 years of experience in the field. Based in Gurgaon, she has built a distinguished career diagnosing and treating a broad spectrum of neurological conditions, earning widespread recognition and trust from both patients and medical professionals. Renowned for her deep clinical expertise and dedication to excellence, Dr. Bala is considered a leading authority in neurology. Her patient-centered approach, marked by compassion and attentiveness, ensures that every individual receives personalized care tailored to their unique needs.',
       education: [
@@ -213,7 +213,7 @@ const DoctorProfile = () => {
       experience: '5+',
       qualifications: 'MSc, MPhil',
       email: 'akshita.shukla@aimanhealth.com',
-      phone: '+91 98765 43214',
+      phone: '+91 88008 33411',
       availability: 'Mon-Fri 10AM-6PM, Sat 9AM-2PM',
       description: 'Committed to create safe spaces for healing, Miss Akshita received her clinical psychology and M.phil degree from Amity university, Noida. She has worked extensively in assessment, therapy of individuals. She provides tailored integrative care in various psychiatric disorders.',
       education: [
@@ -257,7 +257,7 @@ const DoctorProfile = () => {
       experience: '8+',
       qualifications: 'MA, MPhil',
       email: 'keshav.sharma@aimanhealth.com',
-      phone: '+91 98765 43215',
+      phone: '+91 88008 33411',
       availability: 'Mon-Fri 9AM-5PM, Sun 10AM-4PM',
       description: 'With years of clinical expertise, Miss Keshav is dedicated to provide compassionate health care. She hold master of science in clinical psychology from university of Jammu and Kashmir. She specialise in grief counselling and psycho-oncology. She works with individuals of all age group.',
       education: [
