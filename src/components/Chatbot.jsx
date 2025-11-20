@@ -74,7 +74,8 @@ const Chatbot = () => {
     { id: 'aditya', name: 'Dr Aditya Sharma', specialty: 'Consultant Psychiatrist', path: '/doctor/aditya' },
     { id: 'kiran', name: 'Dr Kiran Bala', specialty: 'Senior Consultant Neurologist', path: '/doctor/kiran' },
     { id: 'akshita', name: 'Ms Akshita Shukla', specialty: 'Senior Consultant Clinical Psychologist', path: '/doctor/akshita' },
-    { id: 'keshav', name: 'Ms Keshav Sharma', specialty: 'Consultant Psycho-Oncologist', path: '/doctor/keshav' }
+    { id: 'keshav', name: 'Ms Keshav Sharma', specialty: 'Consultant Psycho-Oncologist', path: '/doctor/keshav' },
+    { id: 'pratishtha', name: 'Ms Pratishtha', specialty: 'Consultant Clinical Psychologist', path: '/doctor/pratishtha' }
   ]
 
   const addMessage = (message) => {

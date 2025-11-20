@@ -17,12 +17,13 @@ import {
   Building
 } from 'lucide-react'
   import groupPhoto from '../photo/group photo.jpg'
-  import aditya from '../photo/aditya.jpg'
+import aditya from '../photo/aditya.jpg'
 import akshita from '../photo/akshita.jpg'
 import keshav from '../photo/keshav.jpg'
 import kiran from '../photo/kiran.jpg'
 import piyush from '../photo/piyush.jpg'
 import sangeetha from '../photo/sangeetha.jpg'
+import pratishtha from '../photo/Pratishtha.jpg'
 
 const Home = () => {
 
@@ -124,7 +125,8 @@ const Home = () => {
       { name: 'Dr Aditya Sharma', specialty: 'Consultant Psychiatrist', experience: '5+ years', image: aditya },
       { name: 'Dr Kiran Bala', specialty: 'Senior Consultant Neurologist', experience: '30+ years', image: kiran },
       { name: 'Ms Akshita Shukla', specialty: 'Senior Consultant Clinical Psychologist', experience: 'MSc, MPhil', image: akshita },
-      { name: 'Ms Keshav Sharma', specialty: 'Consultant Psycho-Oncologist', experience: 'MA, MPhil', image: keshav }
+      { name: 'Ms Keshav Sharma', specialty: 'Consultant Psycho-Oncologist', experience: 'MA, MPhil', image: keshav },
+      { name: 'Ms Pratishtha', specialty: 'Consultant Clinical Psychologist', experience: 'BA, MA, M.Phil (Clinical Psychology)', image: pratishtha }
   ]
 
 
@@ -325,14 +327,16 @@ const Home = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {doctors.map((doctor, index) => (
+            {doctors.map((doctor, index) => {
+              const isSingleInLastRow = doctors.length % 3 === 1 && index === doctors.length - 1
+              return (
               <motion.div
                 key={doctor.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="card text-center group hover:scale-105 transition-transform duration-300"
+                className={`card text-center group hover:scale-105 transition-transform duration-300 ${isSingleInLastRow ? 'lg:col-start-2' : ''}`}
               >
                 <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4">
                   <img
@@ -354,7 +358,7 @@ const Home = () => {
                   Book with {doctor.name.startsWith('Ms') ? 'Ms' : 'Dr'} {doctor.name.split(' ')[1]}
                 </Link>
               </motion.div>
-            ))}
+            )})}
           </div>
 
           <div className="text-center mt-12">

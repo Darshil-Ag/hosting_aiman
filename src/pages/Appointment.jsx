@@ -26,6 +26,7 @@ import keshavImg from '../photo/keshav.jpg'
 import kiranImg from '../photo/kiran.jpg'
 import piyushImg from '../photo/piyush.jpg'
 import sangeethaImg from '../photo/sangeetha.jpg'
+import pratishthaImg from '../photo/Pratishtha.jpg'
 
 const Appointment = () => {
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -107,6 +108,18 @@ const Appointment = () => {
       qualifications: 'M.Sc Clinical Psychology, University of Jammu and Kashmir',
       description: 'With years of clinical expertise, Miss Keshav is dedicated to provide compassionate health care.',
       image: keshavImg,
+      available: true
+    },
+    { 
+      id: 'pratishtha', 
+      name: 'Miss Pratishtha', 
+      specialty: 'Psychologist', 
+      experience: '7+', 
+      email: 'pratishtha@aimanhealth.com',
+      phone: '+91 98765 43216',
+      qualifications: 'BA, MA & M.Phil in Clinical Psychology (VIMHANS)',
+      description: 'Ms Pratishtha offers ethical, structured, and client-centered therapy using CBT, DBT, ACT, MET, and trauma-informed care for adolescents, young adults, and middle-aged clients.',
+      image: pratishthaImg,
       available: true
     }   
   ]
@@ -310,30 +323,39 @@ Please confirm this appointment. Thank you!`
                         Select Doctor *
                       </label>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {doctors.map((doctor) => (
-                          <div
-                            key={doctor.id}
-                            className={`p-4 border-2 rounded-lg cursor-pointer transition-all duration-200 ${
-                              selectedDoctor === doctor.id
-                                ? 'border-primary-500 bg-primary-50'
-                                : 'border-gray-200 hover:border-primary-300'
-                            }`}
-                            onClick={() => setSelectedDoctor(doctor.id)}
-                          >
-                            <div className="flex items-center space-x-3">
-                              <img
-                                src={doctor.image}
-                                alt={doctor.name}
-                                className="w-12 h-12 rounded-full object-cover"
-                              />
-                              <div className="flex-1">
-                                <h3 className="font-semibold text-[#4f439b]">{doctor.name}</h3>
-                                <p className="text-sm text-primary-600">{doctor.specialty}</p>
-                                <p className="text-xs text-[#4f439b]">{doctor.experience} experience</p>
+                        {doctors.map((doctor) => {
+                          const isPiyush = doctor.id === 'piyush'
+                          return (
+                            <div
+                              key={doctor.id}
+                              className={`${isPiyush ? 'sm:col-span-2' : ''} h-full`}
+                            >
+                              <div
+                                className={`${isPiyush ? 'p-4 sm:p-5' : 'p-4'} border-2 rounded-lg cursor-pointer transition-all duration-200 h-full ${
+                                  selectedDoctor === doctor.id
+                                    ? 'border-primary-500 bg-primary-50 shadow-lg'
+                                    : 'border-gray-200 hover:border-primary-300'
+                                }`}
+                                onClick={() => setSelectedDoctor(doctor.id)}
+                              >
+                                <div className={`flex items-center h-full ${isPiyush ? 'space-x-3 sm:space-x-4 sm:justify-between' : 'space-x-3'}`}>
+                                  <div className={`flex items-center ${isPiyush ? 'space-x-3 sm:space-x-4' : 'space-x-3'}`}>
+                                    <img
+                                      src={doctor.image}
+                                      alt={doctor.name}
+                                      className={`rounded-full object-cover ${isPiyush ? 'w-16 h-16' : 'w-12 h-12'}`}
+                                    />
+                                    <div className="flex-1">
+                                      <h3 className={`font-semibold text-[#4f439b] ${isPiyush ? 'text-lg' : ''}`}>{doctor.name}</h3>
+                                      <p className={`text-sm text-primary-600 ${isPiyush ? 'text-base' : ''}`}>{doctor.specialty}</p>
+                                      <p className="text-xs text-[#4f439b]">{doctor.experience} experience</p>
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        ))}
+                          )
+                        })}
                       </div>
                     </div>
 

@@ -28,6 +28,7 @@ import keshavImg from '../photo/keshav.jpg'
 import kiranImg from '../photo/kiran.jpg'
 import piyushImg from '../photo/piyush.jpg'
 import sangeethaImg from '../photo/sangeetha.jpg'
+import pratishthaImg from '../photo/Pratishtha.jpg'
 
 const OurExperts = () => {
   // Hardcoded doctor data
@@ -103,6 +104,18 @@ const OurExperts = () => {
       description: 'With years of clinical expertise, Miss Keshav is dedicated to provide compassionate health care. She hold master of science in clinical psychology from university of Jammu and Kashmir. She specialise in grief counselling and psycho-oncology. She works with individuals of all age group.',
       image: keshavImg,
       available: true
+    },
+    { 
+      id: 'pratishtha', 
+      name: 'Ms Pratishtha', 
+      specialty: 'Consultant Clinical Psychologist', 
+      experience: '7+ years', 
+      email: 'pratishtha@aimanhealth.com',
+      phone: '+91 98765 43216',
+      qualifications: 'BA, MA & M.Phil in Clinical Psychology (VIMHANS)',
+      description: 'Ms Pratishtha is an ethical, evidence-based clinician who provides structured, client-centered therapy. Trained at VIMHANS, she excels in psychological assessment, case formulation, and integrative therapeutic interventions for diverse clinical populations.',
+      image: pratishthaImg,
+      available: true
     }   
   ]
 
@@ -177,14 +190,16 @@ const OurExperts = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            {filteredDoctors.map((doctor, index) => (
+            {filteredDoctors.map((doctor, index) => {
+              const isSingleInLastRow = filteredDoctors.length % 3 === 1 && index === filteredDoctors.length - 1
+              return (
               <motion.div
                 key={doctor.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="card group hover:scale-105 transition-transform duration-300"
+                className={`card group hover:scale-105 transition-transform duration-300 ${isSingleInLastRow ? 'lg:col-start-2' : ''}`}
               >
                 {/* Doctor Image */}
                 <div className="w-full h-40 sm:h-48 rounded-lg overflow-hidden mb-4 bg-gradient-to-br from-primary-400 to-secondary-500">
@@ -215,7 +230,7 @@ const OurExperts = () => {
                 <div className="space-y-2 mb-4 text-xs sm:text-sm text-[#4f439b]">
                   <div className="flex items-center space-x-2">
                     <Award className="w-3 h-3 sm:w-4 sm:h-4" />
-                    <span>{doctor.experience} years experience</span>
+                  <span>{doctor.experience} experience</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <GraduationCap className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -241,7 +256,7 @@ const OurExperts = () => {
                   </Link>
                   <Link to="/appointment" className="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold flex items-center justify-center text-sm sm:text-base py-3 sm:py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform">
                     <Calendar className="w-4 h-4 mr-2" />
-                    Book with {doctor.id === 'akshita' || doctor.id === 'keshav' ? 'Ms' : 'Dr'} {doctor.name.split(' ')[1]}
+                    Book with {['akshita', 'keshav', 'pratishtha'].includes(doctor.id) ? 'Ms' : 'Dr'} {doctor.name.split(' ')[1]}
                   </Link>
                   {!doctor.available && (
                     <div className="text-center text-xs sm:text-sm text-red-600 bg-red-50 px-3 py-2 rounded-lg">
@@ -250,7 +265,7 @@ const OurExperts = () => {
                   )}
                 </div>
               </motion.div>
-            ))}
+            )})}
           </div>
 
           {filteredDoctors.length === 0 && (

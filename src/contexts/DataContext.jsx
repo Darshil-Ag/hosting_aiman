@@ -5,6 +5,7 @@ import keshavImg from '../photo/keshav.jpg'
 import kiranImg from '../photo/kiran.jpg'
 import piyushImg from '../photo/piyush.jpg'
 import sangeethaImg from '../photo/sangeetha.jpg'
+import pratishthaImg from '../photo/Pratishtha.jpg'
 
 const DataContext = createContext()
 
@@ -95,6 +96,18 @@ export const DataProvider = ({ children }) => {
         qualifications: 'M.Sc Clinical Psychology, University of Jammu and Kashmir',
         description: 'With years of clinical expertise, Miss Keshav is dedicated to provide compassionate health care. She hold master of science in clinical psychology from university of Jammu and Kashmir. She specialise in grief counselling and psycho-oncology. She works with individuals of all age group.',
         image: keshavImg,
+        available: true
+      },
+      { 
+        id: 'pratishtha', 
+        name: 'Ms Pratishtha', 
+        specialty: 'Clinical Psychologist', 
+        experience: '7+ years', 
+        email: 'pratishtha@aimanhealth.com',
+        phone: '+91 98765 43216',
+        qualifications: 'BA, MA & M.Phil in Clinical Psychology (VIMHANS)',
+        description: 'Ms Pratishtha is an ethical, evidence-based clinical psychologist who combines comprehensive assessment, collaborative formulation, and integrative therapeutic interventions to support adolescents, young adults, and middle-aged clients.',
+        image: pratishthaImg,
         available: true
       }   
       

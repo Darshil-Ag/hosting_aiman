@@ -23,6 +23,7 @@ import keshavImg from '../photo/keshav.jpg'
 import kiranImg from '../photo/kiran.jpg'
 import piyushImg from '../photo/piyush.jpg'
 import sangeethaImg from '../photo/sangeetha.jpg'
+import pratishthaImg from '../photo/Pratishtha.jpg'
 
 const DoctorProfile = () => {
   const { doctorName } = useParams()
@@ -292,6 +293,52 @@ const DoctorProfile = () => {
         'Psycho-oncology Support Strategies',
         'Age-Appropriate Therapeutic Approaches'
       ]
+    },
+    'pratishtha': {
+      id: 'pratishtha',
+      name: 'Ms Pratishtha',
+      specialty: 'Consultant Clinical Psychologist',
+      image: pratishthaImg,
+      experience: '7+ years',
+      qualifications: 'BA, MA & M.Phil in Clinical Psychology (VIMHANS)',
+      email: 'pratishtha@aimanhealth.com',
+      phone: '+91 98765 43216',
+      availability: 'Mon-Sat 10AM-6PM',
+      description: 'Ms. Pratishtha is a clinical psychologist dedicated to ethical, evidence-based, and client-centered mental health care. Having completed her Graduation, Master’s, and M.Phil in Clinical Psychology, she offers structured, compassionate, and goal-oriented therapeutic services. Her comprehensive training at VIMHANS provided extensive experience in psychological assessment, case formulation, and integrative therapeutic interventions across diverse clinical populations.',
+      education: [
+        'Graduation in Psychology',
+        'Master’s in Clinical Psychology',
+        'M.Phil in Clinical Psychology',
+        'Advanced clinical training at VIMHANS'
+      ],
+      specializations: [
+        'Stress & Anxiety Disorders',
+        'Depressive Disorders',
+        'Obsessive-Compulsive Disorder (OCD)',
+        'Substance Use Concerns',
+        'Personality-related Difficulties',
+        'Relationship & Interpersonal Issues',
+        'Anger & Emotional Regulation Challenges',
+        'Adjustment & Grief-related Issues',
+        'Bipolar & Mood Disorders'
+      ],
+      achievements: [
+        'Extensive psychological assessment experience at VIMHANS',
+        'Known for structured, goal-oriented therapeutic plans',
+        'Integrates multiple evidence-based modalities for complex cases'
+      ],
+      languages: ['English', 'Hindi'],
+      bio: 'Ms Pratishtha provides an integrative, trauma-informed therapeutic space for adolescents, young adults, and middle-aged individuals. She empowers clients to build resilience, develop adaptive coping strategies, and pursue sustainable emotional well-being through CBT, DBT, ACT, MET, and other collaborative frameworks.',
+      awards: [],
+      publications: [],
+      therapeuticApproach: [
+        'Cognitive Behavioral Therapy (CBT)',
+        'Dialectical Behavior Therapy (DBT)',
+        'Acceptance and Commitment Therapy (ACT)',
+        'Motivational Enhancement Therapy (MET)',
+        'Trauma-Informed Therapy',
+        'Integrative, client-sensitive frameworks'
+      ]
     }
   }
 
@@ -396,29 +443,31 @@ const DoctorProfile = () => {
               </motion.div>
 
 
-              {/* Specializations */}
-              {/* <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="card"
-              >
-                <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                  <Stethoscope className="w-6 h-6 mr-3 text-primary-600" />
-                  Specializations
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {doctor.specializations.map((spec, index) => (
-                    <div key={index} className="bg-primary-50 px-4 py-3 rounded-lg">
-                      <span className="text-primary-700 font-medium">{spec}</span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div> */}
+              {/* Clinical Expertise */}
+              {doctor.specializations && doctor.specializations.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="card"
+                >
+                  <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                    <Stethoscope className="w-6 h-6 mr-3 text-primary-600" />
+                    Clinical Expertise
+                  </h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {doctor.specializations.map((spec, index) => (
+                      <div key={index} className="bg-primary-50 px-4 py-3 rounded-lg">
+                        <span className="text-primary-700 font-medium">{spec}</span>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
 
-              {/* Achievements */}
-              {/* {doctor.achievements && doctor.achievements.length > 0 && (
+              {/* Therapeutic Approaches */}
+              {doctor.therapeuticApproach && doctor.therapeuticApproach.length > 0 && (
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -427,43 +476,19 @@ const DoctorProfile = () => {
                   className="card"
                 >
                   <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-                    <Award className="w-6 h-6 mr-3 text-primary-600" />
-                    Key Achievements
-                  </h2>
-                  <ul className="space-y-2">
-                    {doctor.achievements.map((achievement, index) => (
-                      <li key={index} className="flex items-start">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-600">{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              )} */}
-
-              {/* Publications */}
-              {/* {doctor.publications && doctor.publications.length > 0 && (
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                  viewport={{ once: true }}
-                  className="card"
-                >
-                  <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
                     <FileText className="w-6 h-6 mr-3 text-primary-600" />
-                    Publications & Research
+                    Therapeutic Approaches
                   </h2>
-                  <ul className="space-y-2">
-                    {doctor.publications.map((pub, index) => (
-                      <li key={index} className="flex items-start">
-                        <FileText className="w-4 h-4 text-primary-500 mr-3 mt-1 flex-shrink-0" />
-                        <span className="text-gray-600">{pub}</span>
-                      </li>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {doctor.therapeuticApproach.map((approach, index) => (
+                      <div key={index} className="bg-white border border-primary-100 px-4 py-3 rounded-lg flex items-start space-x-3">
+                        <CheckCircle className="w-5 h-5 text-primary-500 mt-1 flex-shrink-0" />
+                        <span className="text-gray-600">{approach}</span>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </motion.div>
-              )} */}
+              )}
             </div>
 
             {/* Sidebar */}
@@ -562,7 +587,7 @@ const DoctorProfile = () => {
                     className="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold px-6 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center justify-center text-lg hover:scale-105 transform"
                   >
                     <Calendar className="w-5 h-5 mr-2" />
-                    Book with {doctor.name.includes('Akshita') || doctor.name.includes('Keshav') ? 'Miss' : 'Dr.'} {doctor.name.split(' ')[1]}
+                    Book with {doctor.name.includes('Akshita') || doctor.name.includes('Keshav') || doctor.name.includes('Pratishtha') ? 'Miss' : 'Dr.'} {doctor.name.split(' ')[1]}
                   </Link>
                 </div>
               </motion.div>
