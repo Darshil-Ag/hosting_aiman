@@ -102,7 +102,7 @@ export const DataProvider = ({ children }) => {
         id: 'pratishtha', 
         name: 'Ms Pratishtha', 
         specialty: 'Clinical Psychologist', 
-        experience: '7+ years', 
+        experience: '3+ years', 
         email: 'pratishtha@aimanhealth.com',
         phone: '+91 98765 43216',
         qualifications: 'BA, MA & M.Phil in Clinical Psychology (VIMHANS)',

@@ -299,7 +299,7 @@ const DoctorProfile = () => {
       name: 'Ms Pratishtha',
       specialty: 'Consultant Clinical Psychologist',
       image: pratishthaImg,
-      experience: '7+ years',
+      experience: '3+ years',
       qualifications: 'BA, MA & M.Phil in Clinical Psychology (VIMHANS)',
       email: 'pratishtha@aimanhealth.com',
       phone: '+91 98765 43216',

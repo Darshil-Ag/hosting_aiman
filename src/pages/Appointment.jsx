@@ -114,7 +114,7 @@ const Appointment = () => {
       id: 'pratishtha', 
       name: 'Miss Pratishtha', 
       specialty: 'Psychologist', 
-      experience: '7+', 
+      experience: '3+', 
       email: 'pratishtha@aimanhealth.com',
       phone: '+91 98765 43216',
       qualifications: 'BA, MA & M.Phil in Clinical Psychology (VIMHANS)',
